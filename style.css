@@ -312,6 +312,7 @@ main {
     margin-left: auto;
   }
 
+  .overlay,
   .menu-overlay {
     display: none;
     position: fixed;
@@ -325,6 +326,7 @@ main {
     transition: opacity 0.3s ease;
   }
 
+  .overlay.active,
   .menu-overlay.active {
     display: block;
     opacity: 1;
