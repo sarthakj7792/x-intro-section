@@ -41,9 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!btn || !dropdownList) return;
 
-    btn.addEventListener('click', (e) => {
+    dropdown.addEventListener('click', (e) => {
+      // If clicking inside the dropdown list links, do not toggle the dropdown menu
+      if (dropdownList.contains(e.target)) return;
+
       e.stopPropagation();
-      const isCurrentlyActive = dropdown.classList.contains('active');
+      const isCurrentlyActive = dropdown.classList.contains('link-open');
 
       // Close all other dropdowns
       dropdowns.forEach((other) => {
