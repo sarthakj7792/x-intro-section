@@ -316,22 +316,24 @@ main {
 
   .overlay,
   .menu-overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 35%; /* left area not covered by the 65% nav drawer */
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 998;
+    z-index: 1000;
     opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.3s ease;
   }
 
   .overlay.active,
   .menu-overlay.active {
-    display: block;
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-menu {
