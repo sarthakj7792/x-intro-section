@@ -118,7 +118,8 @@ header {
   transition: transform 0.25s ease;
 }
 
-.dropdown.active .dropdown-btn .arrow-icon {
+.dropdown.active .dropdown-btn .arrow-icon,
+.dropdown.link-open .dropdown-btn .arrow-icon {
   transform: rotate(180deg);
 }
 
@@ -147,7 +148,8 @@ header {
   min-width: 130px;
 }
 
-.dropdown.active .dropdown-list {
+.dropdown.active .dropdown-list,
+.dropdown.link-open .dropdown-list {
   display: flex;
 }
 

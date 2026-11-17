@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Close all other dropdowns
       dropdowns.forEach((other) => {
         if (other !== dropdown) {
-          other.classList.remove('active');
+          other.classList.remove('active', 'link-open');
           const otherBtn = other.querySelector('.dropdown-btn');
           if (otherBtn) {
             otherBtn.setAttribute('aria-expanded', 'false');
@@ -60,12 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Toggle current dropdown
       if (isCurrentlyActive) {
-        dropdown.classList.remove('active');
+        dropdown.classList.remove('active', 'link-open');
         btn.setAttribute('aria-expanded', 'false');
         const arrow = btn.querySelector('.arrow-icon');
         if (arrow) arrow.src = './assets/images/icon-arrow-down.svg';
       } else {
-        dropdown.classList.add('active');
+        dropdown.classList.add('active', 'link-open');
         btn.setAttribute('aria-expanded', 'true');
         const arrow = btn.querySelector('.arrow-icon');
         if (arrow) arrow.src = './assets/images/icon-arrow-up.svg';
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     dropdowns.forEach((dropdown) => {
       if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('active');
+        dropdown.classList.remove('active', 'link-open');
         const btn = dropdown.querySelector('.dropdown-btn');
         if (btn) {
           btn.setAttribute('aria-expanded', 'false');
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       dropdowns.forEach((dropdown) => {
-        dropdown.classList.remove('active');
+        dropdown.classList.remove('active', 'link-open');
         const btn = dropdown.querySelector('.dropdown-btn');
         if (btn) {
           btn.setAttribute('aria-expanded', 'false');
